@@ -1,0 +1,45 @@
+.ContactFormComponent {
+  background-color: darken(#c4e7f6, 2%);
+  min-height: 300px;
+}
+
+.ContactForm button {
+  margin-right: 10px;
+}
+
+#contact-container{
+    background-color:rgb(196, 231, 246);
+    height: 100%;
+}
+
+.contact-left, .contact-right {
+    // min-height:324px;
+}
+.contact-left {
+    // padding-right: 20px;
+}
+#contact-icons {
+    a, a:hover, a:active, a:focus, a:visited {
+    color: #333333;
+    text-decoration: none;
+    border: 0;
+  }
+}
+.contact-right {
+    border-left: 1px solid #79C0DF;
+    // padding-left: 120px;
+}
+#contact-list{
+    list-style: none;
+}
+#contact-icons {
+    list-style: none;
+}
+#contact-icons li {
+    display: inline;
+}
+
+#contact-icons li {
+    display: inline;
+    margin-right: 10px;
+}
