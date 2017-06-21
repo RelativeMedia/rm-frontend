@@ -5,7 +5,7 @@ const Link = Scroll.Link
 
 import './splash.scss'
 
-export const Splash = ({ id }) => (<div className='SplashComponent'>
+const Splash = ({ id }) => (<div className='SplashComponent'>
   <div id={'intro-splash-' + id}>
     <div id='intro-body'>
       <div className='container'>
