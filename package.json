@@ -39,8 +39,10 @@
     "object-assign": "4.1.0",
     "react": "15.5.4",
     "react-bootstrap": "^0.31.0",
+    "react-datetime": "^2.8.10",
     "react-document-title": "^2.0.3",
     "react-dom": "15.5.4",
+    "react-input-mask": "^0.9.1",
     "react-redux": "5.0.5",
     "react-router": "3.0.5",
     "react-router-redux": "4.0.8",
@@ -97,6 +99,7 @@
     "rimraf": "2.5.4",
     "sass-loader": "6.0.2",
     "style-loader": "0.13.1",
+    "stylelint": "^7.11.1",
     "url-loader": "0.5.7",
     "webpack": "2.2.1",
     "webpack-bundle-analyzer": "2.1.1",
@@ -253,14 +256,17 @@
       "no-var": 1,
       "semi": [
         1,
-        "always"
+        "never"
       ],
       "no-trailing-spaces": 0,
       "eol-last": 0,
       "no-underscore-dangle": 0,
       "no-alert": 0,
       "no-lone-blocks": 0,
-      "jsx-quotes": 1,
+      "jsx-quotes": [
+        "error",
+        "prefer-single"
+      ],
       "react/display-name": [
         1,
         {
@@ -268,13 +274,14 @@
         }
       ],
       "react/forbid-prop-types": [
-        1,
+        0,
         {
           "forbid": [
             "any"
           ]
         }
       ],
+      "no-unused-vars": 0,
       "react/jsx-boolean-value": 0,
       "react/jsx-closing-bracket-location": 0,
       "react/jsx-curly-spacing": 1,

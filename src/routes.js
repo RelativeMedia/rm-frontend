@@ -1,13 +1,13 @@
-import React from 'react';
-import { Route } from 'react-router';
+import React from 'react'
+import { Route } from 'react-router'
 
-import BaseLayout from 'layouts/BaseLayout';
-import App from 'containers';
-import NotFound from 'components/NotFound';
+import BaseLayout from 'layouts/BaseLayout'
+import App from 'containers'
+import { NotFound } from 'components/common'
 
 export default (<Route>
   <Route component={BaseLayout}>
-    <Route path='/' component={App.Home} navigation name='Home' />
+    <Route path='/' component={App.Home} />
   </Route>
   <Route path='*' component={NotFound} />
-</Route>);
+</Route>)

@@ -31,7 +31,7 @@ export const handleErrors = (response) => {
   }
 }
 
-export const Api = {
+const Api = {
   get: function (route, params) {
     return new Promise(function (resolve, reject) {
       const url = _buildUrl(route, params)

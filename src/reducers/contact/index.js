@@ -1,7 +1,9 @@
-import { ACTION_HANDLERS } from './reducer';
-export * as constants from './constants';
+import { ACTION_HANDLERS } from './reducer'
+export constants from './constants'
 
-const initialState = {};
+const initialState = {
+  isSubmitted: false
+}
 
 export default function reducer(state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]

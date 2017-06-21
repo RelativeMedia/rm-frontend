@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import {Services} from 'services'
+import Services from 'services'
 import * as KEYS from './keys'
 
 const SET_HAS_ERROR = 'SET_HAS_ERROR'

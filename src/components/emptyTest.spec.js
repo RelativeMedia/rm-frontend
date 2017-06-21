@@ -1,1 +1,6 @@
-// Must have at least one test file in this directory or Mocha will throw an error.
+import {mount} from 'enzyme'
+import React from 'react'
+
+describe('<EmptyTestComponent />', () => {
+  it('It should run an empty test on EmptyTestComponent')
+})
