@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import './Header.scss'
-import Logo from 'static/img/logo.png'
+import LogoLight from 'static/img/logo-light.png'
+import LogoDark from 'static/img/logo-dark.png'
 import Components from 'components/app'
 
 class Header extends Component {
@@ -20,11 +21,11 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll = () => {
@@ -43,9 +44,9 @@ class Header extends Component {
     const classes = classNames('HeaderComponent', {
       'scrolled': this.state.isScrolled
     })
-
+    const logo = (this.state.isScrolled) ? LogoDark : LogoLight
     return (<div id='HeaderComponent' className={classes}>
-      <Components.Navigation isScrolled={this.state.isScrolled} logo={Logo} />
+      <Components.Navigation isScrolled={this.state.isScrolled} logo={logo} />
     </div>)
   }
 }

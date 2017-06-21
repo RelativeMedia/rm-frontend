@@ -1,6 +1,5 @@
 import React from 'react'
-
-import log from 'middleware/logger'
+import portrait from 'static/img/portrait_260x400.jpg'
 
 const AboutComponent = (props) => (<div className='AboutComponent'>
   <div className='container'>
@@ -10,7 +9,7 @@ const AboutComponent = (props) => (<div className='AboutComponent'>
     <div className='row'>
       <div className='about-body'>
         <div className='col-xs-12 col-sm-3'>
-          <img src='/static/img/portrait_260x400.jpg' className='img-responsive' />
+          <img src={portrait} className='img-responsive' />
         </div>
         <div className='col-xs-12 col-sm-9'>
           <p>Hey there, my name is <strong>Mike DeVita</strong>. I am an IT professional that has worked in the industry since for over a decade. I develop custom websites and web applications for businesses. I  am also a systems administrator for linux and windows systems. I live in Arizona have been here all my life, I've always had a passion for technology and programming.</p>
