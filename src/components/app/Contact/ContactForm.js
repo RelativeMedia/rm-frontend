@@ -46,7 +46,8 @@ class ContactForm extends React.Component {
     dirty: PropTypes.bool,
     pristine: PropTypes.bool,
     invalid: PropTypes.bool,
-    reset: PropTypes.func
+    reset: PropTypes.func,
+    iSubmitting: PropTypes.bool
   }
 
   constructor (props) {

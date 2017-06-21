@@ -1,5 +1,6 @@
 import Api from 'middleware/api'
 import log from 'middleware/logger'
+/*eslint import/namespace: ['error', { allowComputed: true }]*/
 import KEYS, { setIsLoading, setHasResults, handleApiErrors } from 'reducers/statekeys'
 
 import {

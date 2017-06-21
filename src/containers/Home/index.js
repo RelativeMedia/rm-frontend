@@ -57,8 +57,7 @@ class Home extends Component {
 
   render () {
     const {
-      contact,
-      project
+      contact
     } = this.props
 
     const {
