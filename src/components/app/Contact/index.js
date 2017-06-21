@@ -1,0 +1,71 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import Scroll from 'react-scroll'
+
+const Element = Scroll.Element
+
+import ContactForm from './ContactForm'
+const ContactComponent = ({ contact, onSubmit }) => (<div className='ContactComponent'>
+  <div className='container'>
+    <div className='row'>
+        <div className='col-lg-12'>
+          <h1>Contact</h1>
+          <div className='contact-body'>
+            <div className='row'>
+              <div className='col-md-4 col-md-offset-1 contact-left'>
+                <p>Hey there! If you have a non urgent question or comment feel free to fill out the form to the right and i'll get back to you as soon as I can! Otherwise, if it's an emergency feel free to give me a call for immediate help.</p>
+                <hr className='contact-separator' />
+                <ul id='contact-list'>
+                  <li>
+                    <span id='contact-name'>
+                      <strong>Mike DeVita</strong>
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Email:</strong> <a target='_blank' href='mailto:c@relative.media'>c@relative.media</a>
+                  </li>
+                  <li>
+                    <strong>Phone:</strong> [602] 541-4137
+                  </li>
+                </ul>
+                <ul id='contact-icons'>
+                  <li>
+                    <a target='_blank' href='https://github.com/RelativeMedia'>
+                      <i className='fa fa-3x fa-github-square' />
+                    </a>
+                  </li>
+                  <li>
+                    <a target='_blank' href='https://plus.google.com/107361628538090457007' rel='publisher'>
+                      <i className='fa fa-3x fa-google-plus-square' />
+                    </a>
+                  </li>
+                  <li>
+                    <a target='_blank' href='https://twitter.com/relativemediaaz'>
+                      <i className='fa fa-3x fa-twitter-square' />
+                    </a>
+                  </li>
+                  <li>
+                    <a target='_blank' href='https://www.facebook.com/relativemediaaz'>
+                      <i className='fa fa-3x fa-facebook-square' />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className='col-md-6 pull-right'>
+                {(contact.isSubmitting || contact.isSubmitted)
+                  ? <p className='well'>Thanks for sending me an email, I will get back to you shortly.</p>
+                  : <ContactForm isSubmitting={contact.isSubmitting} onSubmit={onSubmit} />
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>)
+ContactComponent.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  contact: PropTypes.object
+}
+
+export default ContactComponent

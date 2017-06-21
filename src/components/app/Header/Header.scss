@@ -1,0 +1,23 @@
+.HeaderComponent {
+  position: fixed;
+  z-index: 1001;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 0;
+  background: #1c1c1c;
+  -webkit-transition: background .3s ease-in-out,padding .3s ease-in-out;
+  -moz-transition: background .3s ease-in-out,padding .3s ease-in-out;
+  transition: background .3s ease-in-out,padding .3s ease-in-out;
+}
+
+.HeaderComponent.scrolled {
+  background-color: #ffffff;
+  border-bottom: 3px solid #dcdcdc;
+}
+
+/**
+ * Logo styling
+ */
+.HeaderComponent .logo {
+  padding-left: 10px;
+}

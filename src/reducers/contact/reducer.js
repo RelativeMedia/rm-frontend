@@ -16,14 +16,16 @@ export const ACTION_HANDLERS = {
     ...state
   }),
   [CONTACT_SUBMITTED] : (state, action) => ({
-    ...state
+    ...state,
+    isSubmitted: true
   }),
   [CONTACT_ERROR] : (state, action) => ({
-    ...state
+    ...state,
+    isSubmitted: false
   })
 }
 
-export default function counterReducer (state = initialState, action) {
+export default function reducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
   return handler ? handler(state, action) : state
 }

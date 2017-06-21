@@ -1,29 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Scroll from 'react-scroll';
-import { connect } from 'react-redux';
-const Element = Scroll.Element;
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Scroll from 'react-scroll'
+import { connect } from 'react-redux'
+const Element = Scroll.Element
 
-import Splash from 'components/Splash';
+import Components from 'components/app'
 // import Contact from 'components/Contact'
 // import Project from 'components/Project'
-// import About from 'components/About'
 // import Services from 'components/Services'
-import Services from 'services';
+import Services from 'services'
 
-export class Home extends React.Component {
+class Home extends Component {
+  static propTypes = {
+    isLoading: PropTypes.any,
+    hasResults: PropTypes.any,
+    form: PropTypes.object.isRequired,
+    contact: PropTypes.object.isRequired,
+    contactSubmit: PropTypes.func.isRequired
+  }
+
   constructor (props) {
     super(props)
     this.state = {
       height: window.innerHeight - 90
     }
-  }
-
-  static propTypes = {
-    isLoading: PropTypes.any,
-    hasResults: PropTypes.any,
-    form: PropTypes.object.isRequired,
-    contact: PropTypes.object.isRequired
   }
 
   componentDidMount () {
@@ -50,33 +50,45 @@ export class Home extends React.Component {
           values
         }
       }
-    } = this.props;
+    } = this.props
 
-    contactSubmit(values);
+    contactSubmit(values)
   }
 
   render () {
     const {
       contact,
       project
-    } = this.props;
+    } = this.props
 
     const {
       height
-    } = this.state;
+    } = this.state
 
     return (<div className='HomeContainer'>
       <div className='container-fluid'>
         <div className='row'>
           <Element id='splash-container' name='home' className='element' style={{ height }}>
-            <Splash id={1} />
+            <Components.Splash id={1} />
           </Element>
         </div>
         <div className='row'>
-          <Element id='about-container' name='about' className='element' />
+          <Element id='about-container' name='about' className='element'>
+            <Components.About />
+          </Element>
         </div>
         <div className='row'>
-          <Element id='contact-container' name='contact' className='element' />
+          <Element id='services-container' name='services' className='element'>
+            <Components.Services />
+          </Element>
+        </div>
+        <div className='row'>
+          <Element id='contact-container' name='contact' className='element'>
+            <Components.Contact
+              contact={contact}
+              onSubmit={this.handleContactSubmit}
+            />
+          </Element>
         </div>
       </div>
     </div>)
