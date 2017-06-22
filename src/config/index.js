@@ -2,8 +2,6 @@ const setupConfig = (environment) => {
   const _config = {
     API_URL: (environment === 'development') ? 'http://localhost:1337/v1' : 'https://api.relative.media/v1',
     APP_TITLE: 'Relative Media | Create.Manage.Develop | Web Development & Systems Administration',
-    GOOGLE_GEOCODE_API_KEY: 'xxxx',
-    LOG_ROCKET_APP_ID: 'xxxx',
     LOG_ROCKET_APP_ID: 'relative-media/reactjs-frontend',
     routes: [
       {
