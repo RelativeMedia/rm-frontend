@@ -1,6 +1,6 @@
 {
   "name": "rm-frontend-v2",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "engines": {
     "npm": ">=3"
@@ -313,6 +313,8 @@
       "react/self-closing-comp": 1,
       "react/sort-comp": 1
     },
-    "globals": {}
+    "globals": {
+      "__DEV__": true
+    }
   }
 }
