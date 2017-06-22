@@ -100,9 +100,12 @@ class ContactForm extends React.Component {
               name='subject'
               label='Subject'
               options={[
-                { label: 'Pre Sales Inquiry' },
-                { label: 'Support Inquiry' },
+                { label: 'General Pre Sales Inquiry' },
+                { label: 'General Support Inquiry' },
+                { label: 'Web Development Support Inquiry' },
                 { label: 'Web Development Quote' },
+                { label: 'Systems Administration Inquiry' },
+                { label: 'Computer Repair Inquiry' },
                 { label: 'Other' }
               ]}
             />
