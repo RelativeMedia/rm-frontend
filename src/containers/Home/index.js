@@ -52,7 +52,11 @@ class Home extends Component {
       }
     } = this.props
 
-    contactSubmit(values)
+    contactSubmit({
+      ...values,
+      // we only want #s passed to the backend
+      phoneNumber: values.phone.replace(/[^0-9]/g, '')
+    })
   }
 
   render () {
