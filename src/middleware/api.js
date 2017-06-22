@@ -51,15 +51,17 @@ const Api = {
     return new Promise(function (resolve, reject) {
       const url = _buildUrl(route)
       log.debug('Api::post::initial', url, payload)
-      return axios(url, {
+      console.log('Api::post::initial', url, payload)
+      return axios({
+        url,
         method: 'POST',
-        body: JSON.stringify(payload)
+        data: payload
       })
       .then(handleErrors)
       .then((response) => {
-        const json = response.json()
         log.debug('Api::post::response', url, json)
-        resolve(json)
+        console.log('Api::post::response', url, response)
+        resolve(response)
       }).catch((err) => {
         return reject(err)
       })
