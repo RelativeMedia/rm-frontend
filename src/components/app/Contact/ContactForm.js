@@ -47,15 +47,7 @@ class ContactForm extends React.Component {
     pristine: PropTypes.bool,
     invalid: PropTypes.bool,
     reset: PropTypes.func,
-    iSubmitting: PropTypes.bool
-  }
-
-  constructor (props) {
-    super(props)
-    this.state = {
-      isSubmitting: false,
-      isSubmitted: false
-    }
+    isSubmitting: PropTypes.bool
   }
 
   _handleSubmit = (event) => {
@@ -95,7 +87,7 @@ class ContactForm extends React.Component {
         <div className='row'>
           <div className='col-xs-12'>
             <Field
-              component={Form.TextField}
+              component={Form.PhoneField}
               name='phone'
               label='Phone Number'
             />
@@ -108,9 +100,12 @@ class ContactForm extends React.Component {
               name='subject'
               label='Subject'
               options={[
-                { label: 'Pre Sales Inquiry' },
-                { label: 'Support Inquiry' },
+                { label: 'General Pre Sales Inquiry' },
+                { label: 'General Support Inquiry' },
+                { label: 'Web Development Support Inquiry' },
                 { label: 'Web Development Quote' },
+                { label: 'Systems Administration Inquiry' },
+                { label: 'Computer Repair Inquiry' },
                 { label: 'Other' }
               ]}
             />
@@ -128,8 +123,8 @@ class ContactForm extends React.Component {
         <div className='row'>
           <div className='col-xs-12'>
             <button
+              type='submit'
               className='btn btn-lg btn-block btn-primary'
-              onClick={this._handleSubmit}
               disabled={isSubmitting || invalid}>
               {(isSubmitting)
                 ? <i className='fa fa-circle-o-notch fa-spin fa-fw' />
@@ -158,8 +153,14 @@ export default reduxForm({
 
     if (!values.phone) {
       errors.phone = 'Phone Number is required'
-    } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(values.email)) {
-      errors.phone = 'Invalid Phone Number'
+    }
+
+    if (values.phone || values.phone === '') {
+      const sanitizedPhone = values.phone.replace(/[^0-9]/g, '')
+      const regex = /^[2-9]\d\d[2-9]\d{6}$/i
+      if (values.phone !== '' && !regex.test(sanitizedPhone)) {
+        errors.phone = 'Invalid Phone Number. Please only enter numbers!'
+      }
     }
 
     if (!values.email) {

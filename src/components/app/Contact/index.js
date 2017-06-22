@@ -5,7 +5,7 @@ import Scroll from 'react-scroll'
 const Element = Scroll.Element
 
 import ContactForm from './ContactForm'
-const ContactComponent = ({ contact, onSubmit }) => (<div className='ContactComponent'>
+const ContactComponent = ({ contact, isSubmitting, onSubmit }) => (<div className='ContactComponent'>
   <div className='container'>
     <div className='row'>
         <div className='col-lg-12'>
@@ -52,9 +52,9 @@ const ContactComponent = ({ contact, onSubmit }) => (<div className='ContactComp
                 </ul>
               </div>
               <div className='col-md-6 pull-right'>
-                {(contact.isSubmitting || contact.isSubmitted)
+                {(isSubmitting || contact.isSubmitted)
                   ? <p className='well'>Thanks for sending me an email, I will get back to you shortly.</p>
-                  : <ContactForm isSubmitting={contact.isSubmitting} onSubmit={onSubmit} />
+                  : <ContactForm isSubmitting={isSubmitting} onSubmit={onSubmit} />
                 }
               </div>
             </div>
@@ -65,6 +65,7 @@ const ContactComponent = ({ contact, onSubmit }) => (<div className='ContactComp
 </div>)
 ContactComponent.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  isSubmitting: PropTypes.bool.isRequired,
   contact: PropTypes.object
 }
 
