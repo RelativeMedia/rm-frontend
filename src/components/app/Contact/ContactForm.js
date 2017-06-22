@@ -157,7 +157,8 @@ export default reduxForm({
 
     if (values.phone || values.phone === '') {
       const sanitizedPhone = values.phone.replace(/[^0-9]/g, '')
-      if (values.phone !== '' && !/^[2-9]\d\d[2-9]\d{6}$/i.test(sanitizedPhone)) {
+      const regex = /^[2-9]\d\d[2-9]\d{6}$/i
+      if (values.phone !== '' && !regex.test(sanitizedPhone)) {
         errors.phone = 'Invalid Phone Number. Please only enter numbers!'
       }
     }
