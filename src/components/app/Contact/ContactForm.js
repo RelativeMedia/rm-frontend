@@ -47,15 +47,7 @@ class ContactForm extends React.Component {
     pristine: PropTypes.bool,
     invalid: PropTypes.bool,
     reset: PropTypes.func,
-    iSubmitting: PropTypes.bool
-  }
-
-  constructor (props) {
-    super(props)
-    this.state = {
-      isSubmitting: false,
-      isSubmitted: false
-    }
+    isSubmitting: PropTypes.bool
   }
 
   _handleSubmit = (event) => {

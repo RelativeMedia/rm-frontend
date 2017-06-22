@@ -57,7 +57,9 @@ class Home extends Component {
 
   render () {
     const {
-      contact
+      contact,
+      isLoading,
+      hasResults
     } = this.props
 
     const {
@@ -85,6 +87,7 @@ class Home extends Component {
           <Element id='contact-container' name='contact' className='element'>
             <Components.Contact
               contact={contact}
+              isSubmitting={isLoading['CONTACT']}
               onSubmit={this.handleContactSubmit}
             />
           </Element>
