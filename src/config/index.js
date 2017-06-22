@@ -4,6 +4,7 @@ const setupConfig = (environment) => {
     APP_TITLE: 'Relative Media | Create.Manage.Develop | Web Development & Systems Administration',
     GOOGLE_GEOCODE_API_KEY: 'xxxx',
     LOG_ROCKET_APP_ID: 'xxxx',
+    LOG_ROCKET_APP_ID: 'relative-media/reactjs-frontend',
     routes: [
       {
         name: 'Home',
