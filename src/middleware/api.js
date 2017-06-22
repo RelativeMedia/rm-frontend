@@ -51,7 +51,6 @@ const Api = {
     return new Promise(function (resolve, reject) {
       const url = _buildUrl(route)
       log.debug('Api::post::initial', url, payload)
-      console.log('Api::post::initial', url, payload)
       return axios({
         url,
         method: 'POST',
