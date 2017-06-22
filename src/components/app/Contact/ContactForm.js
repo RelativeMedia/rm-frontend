@@ -95,7 +95,7 @@ class ContactForm extends React.Component {
         <div className='row'>
           <div className='col-xs-12'>
             <Field
-              component={Form.TextField}
+              component={Form.PhoneField}
               name='phone'
               label='Phone Number'
             />
@@ -158,8 +158,13 @@ export default reduxForm({
 
     if (!values.phone) {
       errors.phone = 'Phone Number is required'
-    } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(values.email)) {
-      errors.phone = 'Invalid Phone Number'
+    }
+
+    if (values.phone || values.phone === '') {
+      const sanitizedPhone = values.phone.replace(/[^0-9]/g, '')
+      if (values.phone !== '' && !/^[2-9]\d\d[2-9]\d{6}$/i.test(sanitizedPhone)) {
+        errors.phone = 'Invalid Phone Number. Please only enter numbers!'
+      }
     }
 
     if (!values.email) {
