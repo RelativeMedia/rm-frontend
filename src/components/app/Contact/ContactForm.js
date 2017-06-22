@@ -120,8 +120,8 @@ class ContactForm extends React.Component {
         <div className='row'>
           <div className='col-xs-12'>
             <button
+              type='submit'
               className='btn btn-lg btn-block btn-primary'
-              onClick={this._handleSubmit}
               disabled={isSubmitting || invalid}>
               {(isSubmitting)
                 ? <i className='fa fa-circle-o-notch fa-spin fa-fw' />
