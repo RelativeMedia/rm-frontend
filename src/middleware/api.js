@@ -59,8 +59,7 @@ const Api = {
       })
       .then(handleErrors)
       .then((response) => {
-        log.debug('Api::post::response', url, json)
-        console.log('Api::post::response', url, response)
+        log.debug('Api::post::response', url, response)
         resolve(response)
       }).catch((err) => {
         return reject(err)
