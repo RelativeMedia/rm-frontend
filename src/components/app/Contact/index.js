@@ -35,11 +35,6 @@ const ContactComponent = ({ contact, isSubmitting, onSubmit }) => (<div classNam
                     </a>
                   </li>
                   <li>
-                    <a target='_blank' href='https://plus.google.com/107361628538090457007' rel='publisher'>
-                      <i className='fa fa-3x fa-google-plus-square' />
-                    </a>
-                  </li>
-                  <li>
                     <a target='_blank' href='https://twitter.com/relativemediaaz'>
                       <i className='fa fa-3x fa-twitter-square' />
                     </a>
