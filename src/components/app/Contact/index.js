@@ -22,10 +22,10 @@ const ContactComponent = ({ contact, isSubmitting, onSubmit }) => (<div classNam
                     </span>
                   </li>
                   <li>
-                    <strong>Email:</strong> <a target='_blank' href='mailto:c@relative.media'>c@relative.media</a>
+                    <strong>Email:</strong> <a target='_blank' href='mailto:mike@relative.media'>mike@relative.media</a>
                   </li>
                   <li>
-                    <strong>Phone:</strong> [602] 541-4137
+                    <strong>Phone:</strong> [480] 359-1902
                   </li>
                 </ul>
                 <ul id='contact-icons'>
